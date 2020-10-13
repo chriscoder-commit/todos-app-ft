@@ -1,0 +1,11 @@
+<div class="todo-container">
+  <div>
+    <p>Id: <%= @todo["id"] %></p>
+    <p>Name: <%= @todo["name"] %></p>
+    <p>Done: <%= @todo["done"] %></p>
+  </div>
+</div>
+
+<%= link_to todos_path do %>
+  <button>Back</button>
+<% end %>

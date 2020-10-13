@@ -33,5 +33,10 @@
     "id": 7,
     "name": "Do marking",
     "done": true
+  },
+  {
+    "id": 8,
+    "name": "Go for walk",
+    "done": true
   }
 ]

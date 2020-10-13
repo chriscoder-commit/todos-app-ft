@@ -1,17 +1,12 @@
 class TodosController < ApplicationController
   before_action :todos
+  before_action :set_todo, only: [:show]
   skip_before_action :verify_authenticity_token
 
   def index
-    render json: @todos
   end
 
   def show
-    id = params[:id].to_i
-    found_todo = @todos.find do |todo|
-      id == todo['id']
-    end
-    render json: found_todo
   end
 
   def create
@@ -26,6 +21,13 @@ class TodosController < ApplicationController
   end
 
   private
+
+  def set_todo 
+    id = params[:id].to_i
+    @todo = @todos.find do |todo|
+      id == todo['id']
+    end
+  end
 
   def to_bool(bool)
     bool == 'true'
